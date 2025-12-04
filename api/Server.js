@@ -10,7 +10,7 @@ dbConnect()
 
 const cors = require("cors");
 // Add the frontend URL once deployed
-var whitelist = ["http://localhost:3000", "https://your-frontend-url.vercel.app"]; 
+var whitelist = ["http://localhost:9000", "https://my-project-frontend-ruby.vercel.app"]; 
 var corsOptions = { origin: whitelist, credentials: true };
 app.use(cors(corsOptions));
 
