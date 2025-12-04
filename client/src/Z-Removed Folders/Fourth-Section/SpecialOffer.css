@@ -1,0 +1,103 @@
+.SpecialOffer{
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    width: 100vw;
+    min-height: 100vh;
+    box-sizing: border-box;
+    min-height: 100vh;
+     background: linear-gradient(135deg,rgb(234, 174, 114),darkgrey);
+}
+
+.Dates-heading{
+    grid-row: 1 / span 2 ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    background: transparent;
+    border-right: 2px solid #ccc;
+}
+.Dates-heading h1{
+    font-size: 2rem;
+    letter-spacing: 4px;
+    color: #222;
+    margin: 0;
+    font-size: 50px;
+}
+
+.Dates-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 40px 0;
+    background-color: transparent;
+}
+
+.Dates-image img{
+    width: 750px;
+    height: 400px;
+    
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.Dates-card{
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 25px;
+    padding: 40px 60px;
+    background-color: transparent;
+    justify-items: center;
+}
+.Dates-card-list{
+    background: #fff;
+    border-radius: 15px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 260px;
+}
+
+.Dates-card-list:hover{
+    transform: translateY(-8px);
+}
+
+.Dates-card-list img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.add-to-cart3{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #6a4dd6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.add-to-cart3:hover{
+    background-color: #5337b5;
+}
+
+.add-to-cart3 .plus3{
+   font-size: 20px;
+}
+
