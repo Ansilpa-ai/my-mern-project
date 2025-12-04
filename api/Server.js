@@ -31,6 +31,8 @@ const AdminRouter = require('./Router/AdminRouter')
 app.use('/admin',AdminRouter)
 
 
-app.listen(process.env.PORT,()=>{
-          console.log('Server running successfully @http://localhost:9000')
-})
+// app.listen(process.env.PORT,()=>{
+//           console.log('Server running successfully @http://localhost:9000')
+// })
+
+module.exports = app;
