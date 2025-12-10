@@ -14,7 +14,7 @@ export default function EditProduct(){
 
     useEffect(()=>{
      
-     axios.get(`http://localhost:9000/editproduct/${id}`)
+     axios.get(`${import.meta.env.VITE_API_URL}/${id}`)
      .then((res)=>{
         setProduct(res.data)
      })
@@ -29,7 +29,7 @@ export default function EditProduct(){
     const handleSubmit = (e) =>{
         e.preventDefault()
         
-            axios.put(`http://localhost:9000/updateproduct/${id}`,product)
+            axios.put(`${import.meta.env.VITE_API_URL}/${id}`,product)
             .then((res)=>{
                 alert(res.data)
                 navigate('/admin/adminview')

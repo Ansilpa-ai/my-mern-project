@@ -23,7 +23,7 @@ const Home = () => {
   const handleSubmit = (e) =>{
     e.preventDefault()
     try{
-     axios.post("http://localhost:9000/login",state)
+     axios.post(`${process.env.REACT_APP_API_URL}/login`,state)
      .then((res)=>{
       const response = res.data
       alert(response.msg)

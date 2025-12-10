@@ -3,15 +3,15 @@ const app = express()
 
 require('dotenv').config()
 const dbConnect = require('./Model/DbConnect')
-dbConnect()
+dbConnect(process.env.MONGODB_URL)
 
 // const cors = require('cors')
 // app.use(cors())
 
 const cors = require("cors");
-// Add the frontend URL once deployed
-var whitelist = ["https://my-project-frontend-ruby.vercel.app"]; 
-var corsOptions = { origin: whitelist, credentials: true };
+const FRONTEND = process.env.FRONTEND_URL || "http://localhost:9000";
+// Add the frontend URL once deployed 
+var corsOptions = { origin: FRONTEND, credentials: true };
 app.use(cors(corsOptions));
 
 

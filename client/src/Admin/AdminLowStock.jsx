@@ -9,7 +9,7 @@ const AdminLowStock = () => {
   const [lowStock, setLowStock] = useState([])
 
   useEffect(()=>{
-    axios.get("http://localhost:9000/admin/lowstock")
+    axios.get(`${import.meta.env.VITE_API_URL}/admin/lowstock`)
     .then((res)=>{
       setLowStock(res.data)
     })
@@ -39,7 +39,7 @@ const AdminLowStock = () => {
                     <td>{p.category}</td>
                     <td>
                       {p.image && p.image.length > 0 ? (
-                        <img src={`http://localhost:9000/${p.image[0]}`} height="50" alt='product' />
+                        <img src={`${process.env.REACT_APP_API_URL}/${p.image[0]}`} height="50" alt='product' />
                       ) : (
                         "No Image"
                       )}

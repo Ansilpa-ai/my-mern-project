@@ -16,7 +16,7 @@ export default function ViewCart(){
             const userId = sessionStorage.getItem('id');
              if(!userId) return;
 
-            axios.get(`http://localhost:9000/cart/viewcart/${userId}`)
+            axios.get(`${import.meta.env.VITE_API_URL}/cart/viewcart/${userId}`)
             
           .then((res)=>{
             const items = res.data.data ||  [];
@@ -47,7 +47,7 @@ export default function ViewCart(){
 
   const increaseQty = async(cartId,currentQuantity) =>{
      try{
-       await axios.put(`http://localhost:9000/cart/increase/${cartId}`,
+       await axios.put(`${import.meta.env.VITE_API_URL}/cart/increase/${cartId}`,
         {
           quantity : currentQuantity + 1
        })
@@ -70,7 +70,7 @@ export default function ViewCart(){
     if(currentQuantity <= 1) return ;  // stop at one
 
       try{
-        await axios.put(`http://localhost:9000/cart/decrease/${cartId}`,{
+        await axios.put(`${import.meta.env.VITE_API_URL}/cart/decrease/${cartId}`,{
         quantity: currentQuantity - 1
       })
       const updated = cart.map((item)=>
@@ -91,7 +91,7 @@ export default function ViewCart(){
 
 const removeItem = async(cartId) =>{
   try{
-   await axios.delete(`http://localhost:9000/cart/delete/${cartId}`)
+   await axios.delete(`${import.meta.env.VITE_API_URL}/cart/delete/${cartId}`)
    const updatedCart = cart.filter((item)=>item._id !== cartId)
    setCart(updatedCart)
    calculateTotal(updatedCart)
@@ -141,7 +141,7 @@ const gotoCheckout = () =>{
            
                return(
                 <div className="cart-card" key={item._id}>
-                  <img src={`http://localhost:9000/${imgPath}`} alt="product" className="cart-image" />
+                  <img src={`${import.meta.env.VITE_API_URL}/${imgPath}`} alt="product" className="cart-image" />
                  <div className="cart-right-side">
                   <div className="cart-details">
                   <h3>{item.productId.productname}</h3>

@@ -10,7 +10,7 @@ const AdminOrders = () => {
    const [orders,setOrders] = useState([])
    
    useEffect(()=>{
-    axios.get("http://localhost:9000/admin/orders")
+    axios.get(`${import.meta.env.VITE_API_URL}/admin/orders`)
     .then((res)=>{
         setOrders(res.data)
     })

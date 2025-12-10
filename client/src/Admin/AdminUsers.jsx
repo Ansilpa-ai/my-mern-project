@@ -14,7 +14,7 @@ const AdminUsers = () => {
 
  const fetchUsers = async ()=>{
     try{
-     const res = await axios.get("http://localhost:9000/admin/users")
+     const res = await axios.get(`${import.meta.env.VITE_API_URL}/admin/users`)
      setUsers(res.data)
     }
     catch(err){

@@ -12,7 +12,7 @@ export default function Userview(){
 
   useEffect(()=>{
     
-    axios.get("http://localhost:9000/viewproduct")
+    axios.get(`${import.meta.env.VITE_API_URL}/viewproduct`)
     .then((res)=>{
       setProduct(res.data)
 
@@ -28,7 +28,7 @@ export default function Userview(){
   function addToCart(productId,quantity){
     const userId = sessionStorage.getItem('id')
     
-     axios.post(`http://localhost:9000/cart/addcart/${userId}`,{productId,quantity})
+     axios.post(`${import.meta.env.VITE_API_URL}/cart/addcart/${userId}`,{productId,quantity})
      .then((res)=>{
       alert(res.data.message)
      })
@@ -74,7 +74,7 @@ export default function Userview(){
         <div className='product-grid'>
           { product.map((item)=>(
             <div className='product-card' key={item._id}>
-               <img src={`http://localhost:9000/${item.image}`} alt={item.productname}
+               <img src={`${import.meta.env.VITE_API_URL}/${item.image}`} alt={item.productname}
                className='product-img' />
                 <h3 className='product-title'>
                   {item.productname}

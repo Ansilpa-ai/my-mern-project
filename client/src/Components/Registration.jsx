@@ -21,7 +21,7 @@ const handleChange = (e) =>{
   const handleSubmit = (e) =>{
     e.preventDefault()
     try{
-      axios.post('http://localhost:9000/register',state)
+      axios.post(`${import.meta.env.VITE_API_URL}/register`,state)
       .then((res)=>{
         alert(res.data)
         navigate('/')

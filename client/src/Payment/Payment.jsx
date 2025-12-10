@@ -41,7 +41,7 @@ const handleChange = (e) =>{
       totalAmount:total,
       address: address
     }
-    await axios.post("http://localhost:9000/admin/order",payload)
+    await axios.post(`${import.meta.env.VITE_API_URL}/admin/order`,payload)
 
     alert("Order Placed Successfully!")
       

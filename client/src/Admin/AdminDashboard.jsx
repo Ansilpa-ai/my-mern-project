@@ -19,7 +19,7 @@ const AdminDashboard = () => {
 
   const fetchStats = async() =>{
     try{
-     const res = await axios.get("http://localhost:9000/admin/dashboard")
+     const res = await axios.get(`${import.meta.env.VITE_API_URL}/admin/dashboard`)
      setStats(res.data)
     }
     catch(err){

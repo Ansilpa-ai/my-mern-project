@@ -17,7 +17,7 @@ export default function Adminview () {
  // Fetch all products once
  useEffect(()=>{
   
-   axios.get("http://localhost:9000/viewproduct")
+   axios.get(`${import.meta.env.VITE_API_URL}/viewproduct`)
    .then((res)=>{
     setAllProducts(res.data)
     setProducts(res.data)
@@ -56,7 +56,7 @@ const filteredProducts = products.filter((p)=>p.productname.toLowerCase().includ
 
   // Delete products
  const deleteProduct = (id) =>{
-    axios.delete("http://localhost:9000/deleteproduct",{headers:{_id:id}})
+    axios.delete(`${import.meta.env.VITE_API_URL}/deleteproduct`,{headers:{_id:id}})
     .then((res)=>{
       alert(res.data)
       window.location.reload()
@@ -111,7 +111,7 @@ const filteredProducts = products.filter((p)=>p.productname.toLowerCase().includ
                filteredProducts.map(item=>(
                  <div className="gridbox" key={item._id}>
                   <h3>{item.productname}</h3>
-                <img src={`http://localhost:9000/${item.image}`} height="100" />
+                <img src={`${process.env.REACT_APP_API_URL}/${item.image}`} height="100" />
                 
                  <p > Rs.{item.price}</p>
                  <p > {item.quantity} kg</p>
